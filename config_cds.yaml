@@ -1,0 +1,45 @@
+# environment
+
+env:
+  name: "rware:rware-tiny-2ag-v2"
+  seed: 642
+
+# training
+
+training:
+  n_iterations: 1000
+  n_steps: 128      # steps per rollout
+  n_epochs: 4       # training epochs per rollout
+  batch_size: 64
+  gamma: 0.99       # discount factor
+  gae_lambda: 0.95  # gae lambda parameter
+
+device: "cpu"  # "cpu" or "cuda"
+
+# network
+
+network:
+  hidden_dim: 128    # for shared network
+  agent_specific_dim: 64
+  agent_specific_hidden: 64
+
+# loss
+
+loss:
+  entropy_coef: 0.01  # entropy regularization coefficient
+  value_coef: 0.5     # value loss coefficient
+  l1_coef: 0.01       # L1 regularization coefficient for agent-specific modules
+  mi_coef: 0.1        # mutual info regularization coefficient
+
+# optimizer
+
+optimizer:
+  lr: 3e-4
+  clip_grad_norm: 0.5
+
+# logging and saving
+
+logging:
+  log_interval: 10
+  save_interval: 100
+  save_dir: "./checkpoints"
