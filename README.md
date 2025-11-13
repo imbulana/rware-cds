@@ -1,3 +1,9 @@
+## Todo
+
+- [ ] Add evaluator
+- [ ] Add wandb or tensorboard logging
+- [ ] Add agent recording (https://gymnasium.farama.org/introduction/record_agent/)
+
 ## Setup
 
 Create a conda environment with python 3.11
@@ -13,7 +19,7 @@ Install the requirements
 pip install -r requirements.txt
 ```
 
-### Training
+## Training
 
 See available hyperparams with
 
